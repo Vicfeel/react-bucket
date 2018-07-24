@@ -35,7 +35,7 @@ class ListView extends PureComponent<ListViewProps> {
 
         return (
             <div>
-                <Button onClick={this.handleAddId}>增加</Button>
+                <Button onClick={this.handleAddId}>dispatch Add</Button>
                 <div>{ids.join(',')}</div>
             </div>
         );
