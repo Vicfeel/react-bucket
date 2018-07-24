@@ -1,0 +1,44 @@
+{
+    "env": {
+        "development": {
+            "presets": [
+                ["env", {
+                    "modules": false,
+                    "useBuiltIns": true,
+                    "targets": {
+                        "chrome": 60
+                    }
+                }]
+            ],
+            "plugins": [
+                "syntax-dynamic-import",
+                ["import", {
+                    "libraryName": "antd",
+                    "style": "css"
+                }],
+                ["transform-runtime", {
+                    "polyfill": false,
+                    "regenerator": true
+                }]
+            ]
+        },
+        "production": {
+            "presets": [
+                ["env", {
+                    "modules": false,
+                    "useBuiltIns": true,
+                    "targets": {
+                        "ie": 10
+                    }
+                }]
+            ],
+            "plugins": [
+                "syntax-dynamic-import",
+                ["import", {
+                    "libraryName": "antd",
+                    "style": "css"
+                }]
+            ]
+        }
+    }
+}

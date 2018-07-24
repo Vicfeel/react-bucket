@@ -1,0 +1,28 @@
+# System
+.DS_Store
+
+# Node
+node_modules
+
+# Development
+dll
+coverage
+dev.config.js
+.awcache
+.cache
+
+# Production
+dist
+output
+
+# IDE
+.vscode
+.idea
+
+# Log
+logs
+*.log
+npm-debug.log*
+
+#temp
+*.d.ts
