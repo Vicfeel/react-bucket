@@ -2,7 +2,7 @@ import {createReducer} from './utils';
 import {ADD_ID} from './actionTypes';
 
 const initialState = {
-    ids: [1,2,3],
+    ids: [],
 };
 
 const rootReducer = createReducer<typeof initialState, number>({
