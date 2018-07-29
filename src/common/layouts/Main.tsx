@@ -1,9 +1,8 @@
 import React, {PureComponent} from 'react';
-
+import {Switch, Route} from 'react-router-dom';
 import {Layout} from 'antd';
 
-import ListView from '../../containers/ListView';
-import RangeView from '../../containers/RangeView';
+import routes from '../routes';
 
 import styles from './Main.less';
 
@@ -13,8 +12,14 @@ class Main extends PureComponent {
     render() {
         return (
             <AntdContent className={styles.main}>
-                <ListView />
-                <RangeView />
+                <Switch>
+                    {routes.map(routeProps =>
+                        <Route
+                            key={routeProps.path}
+                            {...routeProps}
+                        />,
+                    )}
+                </Switch>
             </AntdContent>
         );
     }

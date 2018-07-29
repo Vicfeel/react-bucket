@@ -1,11 +1,14 @@
 import React, {PureComponent} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+
+import {push} from 'connected-react-router';
 import {Button} from 'antd';
 
 import {addId} from '../common/actions';
 
 const actions = {
+    push,
     addId,
 };
 
@@ -25,9 +28,10 @@ type ListViewProps = ListViewStateProps & ListViewDispatchProps;
 
 class ListView extends PureComponent<ListViewProps> {
     private handleAddId = (e) => {
-        const {addId} = this.props.actions;
+        const {actions: {push, addId}} = this.props;
 
-        addId(2);
+        // addId(2);
+        push('./range');
     }
 
     render() {
