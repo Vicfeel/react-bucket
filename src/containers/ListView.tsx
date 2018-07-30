@@ -7,6 +7,7 @@ import {Link} from 'react-router-dom';
 import {Button} from 'antd';
 
 import {addId} from '../common/actions';
+import {RouteComponentProps} from '../common/types/router';
 
 const actions = {
     push,
@@ -21,26 +22,32 @@ const mapDispatchToProps = dispatch => ({
     actions: bindActionCreators(actions, dispatch),
 });
 
+interface ListViewRouteQuery {
+    name ?: number;
+}
+
+type ListViewOwnProps = RouteComponentProps<ListViewRouteQuery>;
+
 type ListViewStateProps = ReturnType<typeof mapStateToProps>;
 
 type ListViewDispatchProps = ReturnType<typeof mapDispatchToProps>;
 
-type ListViewProps = ListViewStateProps & ListViewDispatchProps;
+type ListViewProps = ListViewOwnProps & ListViewStateProps & ListViewDispatchProps;
 
 class ListView extends PureComponent<ListViewProps> {
     private handleAddId = (e) => {
-        const {actions: {push, addId}} = this.props;
-
-        // addId(2);
-        push('range');
+        const {actions: {addId}} = this.props;
+        
+        addId(2);
     }
 
     render() {
-        const {ids} = this.props;
+        const {ids, location: {query: {name}}} = this.props;
 
         return (
             <div>
                 <Button onClick={this.handleAddId}>dispatch Add</Button>
+                <div>{name}</div>
                 <Link to="range">跳转</Link>
                 <div>{ids.join(',')}</div>
             </div>

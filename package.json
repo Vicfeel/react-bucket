@@ -44,8 +44,11 @@
     "webpack-dev-server": "^3.1.1"
   },
   "dependencies": {
+    "@types/query-string": "^6.1.0",
     "antd": "^3.3.3",
     "connected-react-router": "^4.3.0",
+    "history-query-enhancer": "^1.0.4",
+    "query-string": "^6.1.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",

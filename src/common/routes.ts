@@ -1,7 +1,9 @@
+import {Routes} from './types/router';
+
 import ListView from '../containers/ListView';
 import RangeView from '../containers/RangeView';
 
-const routes = [{
+const routes: Routes = [{
     path: '/list',
     exact: true,
     component: ListView,

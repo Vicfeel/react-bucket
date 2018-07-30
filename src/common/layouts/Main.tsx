@@ -1,5 +1,5 @@
 import React, {StatelessComponent} from 'react';
-import {Switch, Route} from 'react-router-dom';
+import {Switch, Route, Redirect} from 'react-router-dom';
 import {Layout} from 'antd';
 
 import routes from '../routes';
@@ -18,6 +18,10 @@ const Main: StatelessComponent = () => {
                         {...routeProps}
                     />,
                 )}
+                <Redirect
+                    from="*"
+                    to="/list"
+                />
             </Switch>
         </AntdContent>
     );
