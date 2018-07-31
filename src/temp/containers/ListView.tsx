@@ -6,15 +6,15 @@ import {Link} from 'react-router-dom';
 
 import {Button} from 'antd';
 
-import {addId} from '../common/actions';
-import {RouteComponentProps} from '../common/types/router';
+import {State, RouteComponentProps} from '../../common/types';
+import {addId} from '../actions';
 
 const actions = {
     push,
     addId,
 };
 
-const mapStateToProps = ({ids}) => ({
+const mapStateToProps = ({temp: {ids}}: State) => ({
     ids,
 });
 

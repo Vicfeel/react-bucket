@@ -1,16 +1,8 @@
-import {Routes} from './types/router';
+import temp from '../temp/routes';
 
-import ListView from '../containers/ListView';
-import RangeView from '../containers/RangeView';
-
-const routes: Routes = [{
-    path: '/list',
-    exact: true,
-    component: ListView,
-}, {
-    path: '/range',
-    exact: true,
-    component: RangeView,
-}];
+const routes = [
+    ...temp,
+];
 
 export default routes;
+
