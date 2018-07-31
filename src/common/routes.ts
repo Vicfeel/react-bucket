@@ -1,4 +1,4 @@
-import temp from '../temp/routes';
+import temp from 'temp/routes';
 
 const routes = [
     ...temp,

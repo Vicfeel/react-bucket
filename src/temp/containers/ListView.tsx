@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 
 import {Button} from 'antd';
 
-import {State, RouteComponentProps} from '../../common/types';
+import {State, RouteComponentProps} from 'common/types';
 import {addId} from '../actions';
 
 const actions = {

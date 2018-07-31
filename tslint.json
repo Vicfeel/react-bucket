@@ -13,7 +13,6 @@
         "max-line-length": [true, 120],
         "member-ordering": [false],
         "no-shadowed-variable": [false],
-        "no-submodule-imports": [true, "antd", "rxjs", "history", "moment"],
         "no-unused-expression": [true, "allow-fast-null-checks"],
         "no-var-requires": [false],
         "object-curly-spacing": [true, "never"],

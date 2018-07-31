@@ -4,12 +4,15 @@ const {
     NamedModulesPlugin,
 } = require('webpack');
 
+const {entry, alias} = require('./webpack/env');
+const {preLoaders, tsLoaders, cssLoaders, lessLoaders} = require('./webpack/loaders');
+
 module.exports = {
     entry: [
         'react-hot-loader/patch',
         'webpack-dev-server/client?http://localhost:8080',
         'webpack/hot/only-dev-server',
-        "./src/index.tsx"
+        `./${entry.dirName}/index.tsx`
     ],
     output: {
         filename: "[name].bundle.js",
@@ -28,48 +31,27 @@ module.exports = {
             {
                 enforce: 'pre',
                 test: /\.(ts|tsx)$/,
-                use: [
-                    {loader: 'source-map-loader'},
-                    {loader: 'tslint-loader'}
-                ],
+                use: preLoaders,
                 exclude: /node_modules/
             },
             {
                 test: /\.(ts|tsx)$/,
-                use: [
-                    {loader: 'babel-loader'},
-                    {loader: 'ts-loader'}
-                ],
+                use: tsLoaders,
                 exclude: /node_modules/
             },
             {
                 test: /\.less$/,
-                use: [
-                    { loader: 'style-loader' },
-                    {
-                        loader: 'typings-for-css-modules-loader',
-                        options: {
-                            modules: true,
-                            namedExport: true,
-                            camelCase: true,
-                            less: true
-                        }
-                    }, {
-                        loader: 'less-loader'
-                    }
-                ]
+                use: lessLoaders,
             },
             {
                 test: /\.css$/,
-                use: [
-                    { loader: 'style-loader' },
-                    { loader: 'css-loader' }
-                ]
+                use: cssLoaders
             }
         ]
     },
     resolve: {
-        extensions: [".tsx", ".ts", ".js"],
+        alias,
+        extensions: [".tsx", ".ts", ".js", ".json"],
     },
     performance: {
         hints: false,

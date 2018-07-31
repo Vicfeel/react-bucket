@@ -1,4 +1,4 @@
-import {Routes} from '../common/types/router';
+import {Routes} from 'common/types/router';
 
 import ListView from './containers/ListView';
 import RangeView from './containers/RangeView';
