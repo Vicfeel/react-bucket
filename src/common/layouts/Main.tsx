@@ -2,13 +2,17 @@ import React, {StatelessComponent} from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
 import {Layout} from 'antd';
 
-import routes from '../routes';
+import {Routes} from 'common/types';
 
 import styles from './Main.less';
 
 const {Content: AntdContent} = Layout;
 
-const Main: StatelessComponent = () => {
+interface MainProps {
+    routes: Routes;
+}
+
+const Main: StatelessComponent<MainProps> = ({routes}) => {
     return (
         <AntdContent className={styles.main}>
             <Switch>
