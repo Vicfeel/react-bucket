@@ -18,7 +18,7 @@ const Main: StatelessComponent<MainProps> = ({routes}) => {
             <Switch>
                 {routes.map(routeProps =>
                     <Route
-                        key={routeProps.path}
+                        key={routeProps.path as string}
                         {...routeProps}
                     />,
                 )}

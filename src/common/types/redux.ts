@@ -1,12 +1,6 @@
 import rootReducer from '../rootReducer';
 
-import {EnhancedLocation} from 'history-query-enhancer';
-
-export type State = ReturnType<typeof rootReducer> & {
-    router: {
-        location: EnhancedLocation<any>;
-    },
-};
+export type State = ReturnType<typeof rootReducer>;
 
 export type ActionType = string;
 

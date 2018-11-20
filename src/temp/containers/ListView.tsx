@@ -37,7 +37,7 @@ type ListViewProps = ListViewOwnProps & ListViewStateProps & ListViewDispatchPro
 class ListView extends PureComponent<ListViewProps> {
     private handleAddId = (e) => {
         const {actions: {addId}} = this.props;
-        
+
         addId(2);
     }
 

@@ -29,7 +29,7 @@ function createReducer<S, P, M>(reducerMap: MetaReducerMap<S, P, M>, initialStat
 function createReducer<S, P, M>(reducerMap: MetaReducerMap<S, P, M>, initialState: S): any {
     return (state = initialState, action: MetaAction<P, M>) => {
         const {type} = action;
-        
+
         return reducerMap[type] ? reducerMap[type](state, action) : state;
     };
 }

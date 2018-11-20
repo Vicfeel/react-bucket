@@ -1,14 +1,14 @@
 import {createStore, applyMiddleware} from 'redux';
-import {connectRouter, routerMiddleware as createRouterMiddleware} from 'connected-react-router';
+import {routerMiddleware as createRouterMiddleware} from 'connected-react-router';
 import {composeWithDevTools} from 'redux-devtools-extension';
 
-import rootReducer from './rootReducer';
 import history from './history';
+import rootReducer from './rootReducer';
 
 const routerMiddleware = createRouterMiddleware(history);
 
 const store = createStore(
-    connectRouter(history)(rootReducer),
+    rootReducer,
     composeWithDevTools(applyMiddleware(routerMiddleware)),
 );
 
