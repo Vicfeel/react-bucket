@@ -1,3 +1,5 @@
+const {loader: extractCss} = require('mini-css-extract-plugin');
+
 const sourceMap = {
     loader: 'source-map-loader',
 };
@@ -36,9 +38,11 @@ const ts = {
     loader: 'ts-loader',
 };
 
+const extract = process.env.mode === 'production' ? [extractCss] : [];
+
 const preLoaders = [sourceMap, tslint];
-const lessLoaders = [style, cssModule, less];
-const cssLoaders = [style, css];
+const lessLoaders = [style, ...extract, cssModule, less];
+const cssLoaders = [style, ...extract, css];
 const tsLoaders = [babel, ts];
 
 module.exports = {

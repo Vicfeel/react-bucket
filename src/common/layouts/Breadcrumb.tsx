@@ -28,7 +28,7 @@ class Breadcrumb extends PureComponent<BreadcrumbProps> {
         const {breadcrumb} = this.props;
         return (
             <AntdBreadcrumb style={{margin: '16px 0'}}>
-                {breadcrumb.childs.map((child, index) => (
+                {breadcrumb && breadcrumb.childs.map((child, index) => (
                     <AntdBreadcrumbItem key={index}>{child}</AntdBreadcrumbItem>
                 ))}
             </AntdBreadcrumb>

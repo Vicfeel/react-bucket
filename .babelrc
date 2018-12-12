@@ -16,10 +16,7 @@
                     "libraryName": "antd",
                     "style": "css"
                 }],
-                ["transform-runtime", {
-                    "polyfill": false,
-                    "regenerator": true
-                }]
+                ["@babel/plugin-transform-runtime"]
             ]
         },
         "production": {

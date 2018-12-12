@@ -1,9 +1,9 @@
-import {Routes} from 'common/types/router';
+import {RouteProps} from 'react-router-dom';
 
 import ListView from './containers/ListView';
 import RangeView from './containers/RangeView';
 
-const routes: Routes = [{
+const routes: ReadonlyArray<RouteProps> = [{
     path: '/list',
     exact: true,
     component: ListView,

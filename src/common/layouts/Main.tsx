@@ -1,15 +1,13 @@
 import React, {StatelessComponent} from 'react';
-import {Switch, Route, Redirect} from 'react-router-dom';
+import {Switch, Route, Redirect, RouteProps} from 'react-router-dom';
 import {Layout} from 'antd';
-
-import {Routes} from 'common/types';
 
 import styles from './Main.less';
 
 const {Content: AntdContent} = Layout;
 
 interface MainProps {
-    routes: Routes;
+    routes: ReadonlyArray<RouteProps>;
 }
 
 const Main: StatelessComponent<MainProps> = ({routes}) => {

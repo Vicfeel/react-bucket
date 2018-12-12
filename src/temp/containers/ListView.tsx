@@ -2,11 +2,12 @@ import React, {PureComponent} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {push} from 'connected-react-router';
-import {Link} from 'react-router-dom';
+import {Link, RouteComponentProps} from 'react-router-dom';
+import {parseUrl} from 'query-string';
 
 import {Button} from 'antd';
 
-import {State, RouteComponentProps} from 'common/types';
+import {State} from 'common/types';
 import {addId} from '../actions';
 
 const actions = {
@@ -23,16 +24,14 @@ const mapDispatchToProps = dispatch => ({
 });
 
 interface ListViewRouteQuery {
-    name ?: number;
+    name ?: string;
 }
-
-type ListViewOwnProps = RouteComponentProps<ListViewRouteQuery>;
 
 type ListViewStateProps = ReturnType<typeof mapStateToProps>;
 
 type ListViewDispatchProps = ReturnType<typeof mapDispatchToProps>;
 
-type ListViewProps = ListViewOwnProps & ListViewStateProps & ListViewDispatchProps;
+type ListViewProps = RouteComponentProps & ListViewStateProps & ListViewDispatchProps;
 
 class ListView extends PureComponent<ListViewProps> {
     private handleAddId = (e) => {
@@ -42,7 +41,7 @@ class ListView extends PureComponent<ListViewProps> {
     }
 
     render() {
-        const {ids, location: {query: {name}}} = this.props;
+        const {ids} = this.props;
 
         return (
             <div>
