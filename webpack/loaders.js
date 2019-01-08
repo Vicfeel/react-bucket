@@ -38,12 +38,16 @@ const ts = {
     loader: 'ts-loader',
 };
 
+const es = {
+    loader: 'eslint-loader',
+};
+
 const extract = process.env.mode === 'production' ? [extractCss] : [];
 
 const preLoaders = [sourceMap, tslint];
 const lessLoaders = [style, ...extract, cssModule, less];
 const cssLoaders = [style, ...extract, css];
-const tsLoaders = [babel, ts];
+const tsLoaders = [babel, ts, es];
 
 module.exports = {
     preLoaders,

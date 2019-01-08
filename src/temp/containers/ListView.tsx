@@ -3,7 +3,6 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {push} from 'connected-react-router';
 import {Link, RouteComponentProps} from 'react-router-dom';
-import {parseUrl} from 'query-string';
 
 import {Button} from 'antd';
 
@@ -34,7 +33,7 @@ type ListViewDispatchProps = ReturnType<typeof mapDispatchToProps>;
 type ListViewProps = RouteComponentProps & ListViewStateProps & ListViewDispatchProps;
 
 class ListView extends PureComponent<ListViewProps> {
-    private handleAddId = (e) => {
+    private handleAddId = (event) => {
         const {actions: {addId}} = this.props;
 
         addId(2);
