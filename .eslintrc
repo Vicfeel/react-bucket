@@ -40,7 +40,6 @@
         "camelcase": "error",
         "capitalized-comments": ["error", "always", {"ignorePattern": "tslint"}],
         "class-methods-use-this": "error",
-        "comma-dangle": "error",
         "comma-spacing": ["error", {
             "before": false,
             "after": true

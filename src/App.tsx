@@ -9,24 +9,22 @@ import {Header, Sider, Footer, Main, Breadcrumb} from 'common/layouts';
 
 import styles from './App.less';
 
-const App: StatelessComponent = () => {
-    return (
-        <Provider store={store}>
-            <ConnectedRouter history={history}>
-                <Layout>
-                    <Header />
-                    <Layout className={styles.container}>
-                        <Sider />
-                        <Layout className={styles.main}>
-                            <Breadcrumb breadcrumbs={breadcrumbs} />
-                            <Main routes={routes} />
-                        </Layout>
+const App: StatelessComponent = () => (
+    <Provider store={store}>
+        <ConnectedRouter history={history}>
+            <Layout>
+                <Header />
+                <Layout className={styles.container}>
+                    <Sider />
+                    <Layout className={styles.main}>
+                        <Breadcrumb breadcrumbs={breadcrumbs} />
+                        <Main routes={routes} />
                     </Layout>
-                    <Footer />
                 </Layout>
-            </ConnectedRouter>
-        </Provider>
-    );
-};
+                <Footer />
+            </Layout>
+        </ConnectedRouter>
+    </Provider>
+);
 
 export default App;

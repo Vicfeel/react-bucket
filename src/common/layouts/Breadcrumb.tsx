@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react';
+import React, {StatelessComponent} from 'react';
 import {connect} from 'react-redux';
 
 import {Breadcrumb as AntdBreadcrumb} from 'antd';
@@ -23,17 +23,14 @@ const mapStateToProps = (state: State, {breadcrumbs}: BreadcrumbOwnProps) => {
 
 type BreadcrumbProps = ReturnType<typeof mapStateToProps>;
 
-class Breadcrumb extends PureComponent<BreadcrumbProps> {
-    render() {
-        const {breadcrumb} = this.props;
-        return (
-            <AntdBreadcrumb style={{margin: '16px 0'}}>
-                {breadcrumb && breadcrumb.childs.map((child, index) => (
-                    <AntdBreadcrumbItem key={index}>{child}</AntdBreadcrumbItem>
-                ))}
-            </AntdBreadcrumb>
-        );
-    }
-}
+const Breadcrumb: StatelessComponent<BreadcrumbProps> = ({
+    breadcrumb,
+}) => (
+    <AntdBreadcrumb style={{margin: '16px 0'}}>
+        {breadcrumb && breadcrumb.childs.map((child, index) => (
+            <AntdBreadcrumbItem key={String(index)}>{child}</AntdBreadcrumbItem>
+        ))}
+    </AntdBreadcrumb>
+);
 
 export default connect(mapStateToProps)(Breadcrumb);

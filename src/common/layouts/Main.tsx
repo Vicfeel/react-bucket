@@ -10,23 +10,21 @@ interface MainProps {
     routes: ReadonlyArray<RouteProps>;
 }
 
-const Main: StatelessComponent<MainProps> = ({routes}) => {
-    return (
-        <AntdContent className={styles.main}>
-            <Switch>
-                {routes.map(routeProps =>
-                    <Route
-                        key={routeProps.path as string}
-                        {...routeProps}
-                    />,
-                )}
-                <Redirect
-                    from="*"
-                    to="/list"
+const Main: StatelessComponent<MainProps> = ({routes}) => (
+    <AntdContent className={styles.main}>
+        <Switch>
+            {routes.map(routeProps => (
+                <Route
+                    key={routeProps.path as string}
+                    {...routeProps}
                 />
-            </Switch>
-        </AntdContent>
-    );
-};
+            ))}
+            <Redirect
+                from="*"
+                to="/list"
+            />
+        </Switch>
+    </AntdContent>
+);
 
 export default Main;
