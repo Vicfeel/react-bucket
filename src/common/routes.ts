@@ -1,4 +1,4 @@
-import temp from 'temp/routes';
+import temp from 'demo_redux/routes';
 
 const routes = [...temp];
 

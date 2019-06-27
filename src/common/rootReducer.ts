@@ -3,7 +3,7 @@ import {connectRouter} from 'connected-react-router';
 
 import history from './history';
 
-import temp from 'temp/reducer';
+import temp from 'demo_redux/reducer';
 
 const rootReducer = combineReducers({
     temp,
