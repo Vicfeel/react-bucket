@@ -2,13 +2,11 @@ import {Breadcrumbs} from 'common/types';
 
 const breadcrumbs: Breadcrumbs = [
     {
-        path: '/list',
-        exact: true,
-        childs: ['测试', '列表'],
+        path: '/redux',
+        childs: ['redux_demo'],
     }, {
-        path: '/range',
-        exact: true,
-        childs: ['测试', '范围'],
+        path: '/mobx',
+        childs: ['mobx_demo'],
     },
 ];
 

@@ -5,11 +5,11 @@ import RangeView from './containers/RangeView';
 
 const routes: ReadonlyArray<RouteProps> = [
     {
-        path: '/list',
+        path: '/redux/list',
         exact: true,
         component: ListView,
     }, {
-        path: '/range',
+        path: '/redux/range',
         exact: true,
         component: RangeView,
     },

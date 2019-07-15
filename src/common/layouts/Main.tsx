@@ -21,7 +21,7 @@ const Main: StatelessComponent<MainProps> = ({routes}) => (
             ))}
             <Redirect
                 from="*"
-                to="/list"
+                to="/mobx"
             />
         </Switch>
     </AntdContent>

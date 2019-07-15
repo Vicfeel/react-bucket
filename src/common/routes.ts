@@ -1,5 +1,6 @@
-import temp from 'demo_redux/routes';
+import redux from 'demo_redux/routes';
+import mobx from 'demo_mobx/routes';
 
-const routes = [...temp];
+const routes = [...redux, ...mobx];
 
 export default routes;

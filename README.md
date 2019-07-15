@@ -1,8 +1,10 @@
 # react-bucket
 
+react project incubator
+
 * 基础框架：`react`
 
-* 状态管理：`redux`
+* 状态管理：`redux`, `mobx`
 
 * 开发语言： `typescript`, `ES6`, `less`
 

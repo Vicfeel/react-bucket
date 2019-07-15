@@ -12,9 +12,9 @@ import styles from './App.less';
 const App: StatelessComponent = () => (
     <Provider store={store}>
         <ConnectedRouter history={history}>
-            <Layout>
+            <Layout className={styles.container}>
                 <Header />
-                <Layout className={styles.container}>
+                <Layout className={styles.body}>
                     <Sider />
                     <Layout className={styles.main}>
                         <Breadcrumb breadcrumbs={breadcrumbs} />
