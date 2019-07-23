@@ -4,6 +4,7 @@
     "module": "ESNext",
     "jsx": "react",
     "sourceMap": true,
+    "noImplicitThis": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",

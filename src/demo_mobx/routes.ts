@@ -1,6 +1,6 @@
 import {RouteProps} from 'react-router-dom';
 
-import TodoView from './TodoView';
+import TodoView from './App';
 
 const routes: ReadonlyArray<RouteProps> = [
     {
